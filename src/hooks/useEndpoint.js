@@ -7,6 +7,7 @@ export default function useEndpoint(req) {
     isLoading: false,
     isError: false,
     data: [],
+    cache: {},
   });
 
   const _buildQueryString = (params) => Object.entries(params)
@@ -14,6 +15,8 @@ export default function useEndpoint(req) {
     .join('&');
 
   const _buildUrl = (req) => `${req.url}?${_buildQueryString(req.params)}`;
+
+  const _existsInCache = (key) => !!res.cache?.[key];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,13 +29,25 @@ export default function useEndpoint(req) {
 
         const url = _buildUrl(req);
 
-        const rawData = await fetch(url);
-        const data = await rawData.json();
+        const isInCache = _existsInCache(url);
+        let data = [];
+
+        if (isInCache) {
+          data = res.cache[url];
+        } else {
+          const rawData = await fetch(url);
+          data = await rawData.json();
+        }
+
 
         setRes({
           isLoading: false,
           isError: false,
           data,
+          cache: {
+            ...res.cache,
+            [url]: data,
+          }
         });
       } catch (error) {
         console.error(error);
@@ -47,5 +62,6 @@ export default function useEndpoint(req) {
     fetchData();
   }, [req.url, req.params]);
 
-  return res;
+  const { isLoading, isError, data } = res;
+  return { isLoading, isError, data };
 }
