@@ -1,0 +1,44 @@
+.beer-card {
+ display: grid;
+ grid-template-columns: .5fr 1fr;
+ grid-template-areas:
+ "beer-card__image beer-card__copy";
+ grid-gap: 4rem;
+ height: 100%;
+ padding: 1rem;
+ cursor: pointer;
+ transition: background-color .5s ease-in-out;
+
+ &:hover {
+   background-color: #ededed;
+ }
+
+ .beer-card__item {
+   grid-area: beer-card__image;
+   width: 100px;
+   height: 250px;
+
+   .beer-card__image {
+     width: 100%;
+     height: 100%;
+     object-fit: contain;
+   }
+ }
+
+ .beer-card__copy {
+   grid-area: beer-card__copy;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+
+   .beer-card__copy--title {
+     font-size: 2.4rem;
+     font-weight: 600;
+   }
+
+   .beer-card__copy--body {
+     font-size: $default-font-size;
+     font-weight: 400;
+   }
+ }
+}

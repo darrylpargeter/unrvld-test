@@ -1,6 +1,9 @@
+body {
+  background-color: $background-colour;
+}
+
 .layout {
   height: 100vh;
   display: grid;
-  grid-template-rows: 5% 95%;
-  background-color: $background-colour;
+  grid-template-rows: 5% 90%;
 }

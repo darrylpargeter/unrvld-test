@@ -22,6 +22,7 @@ module.exports = {
       "@components": resolve(__dirname, './src/components'),
       "@hooks": resolve(__dirname, './src/hooks'),
       "@styles": resolve(__dirname, './src/styles'),
+      "@utils": resolve(__dirname, './src/utils'),
     },
   },
   module: {

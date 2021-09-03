@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 export default function useEndpoint(req) {
   if (!req?.url) throw new Error('useEndpoint needs a vaild url');
 
+  const [request, setRequest] = useState(req);
+
   const [res, setRes] = useState({
     isLoading: false,
     isError: false,
@@ -18,6 +20,16 @@ export default function useEndpoint(req) {
 
   const _existsInCache = (key) => !!res.cache?.[key];
 
+  const makeRequest = (params) => {
+    setRequest({
+      ...request,
+      params: {
+        per_page: request.params.per_page,
+        ...params,
+      }
+    });
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -27,7 +39,7 @@ export default function useEndpoint(req) {
           data: [],
         });
 
-        const url = _buildUrl(req);
+        const url = _buildUrl(request);
 
         const isInCache = _existsInCache(url);
         let data = [];
@@ -60,8 +72,8 @@ export default function useEndpoint(req) {
     }
 
     fetchData();
-  }, [req.url, req.params]);
+  }, [request.url, request.params]);
 
   const { isLoading, isError, data } = res;
-  return { isLoading, isError, data };
+  return { isLoading, isError, data, makeRequest };
 }

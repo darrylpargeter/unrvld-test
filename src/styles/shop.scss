@@ -1,17 +1,19 @@
 .shop {
   height: 100%;
+  // overflow: hidden;
   display: grid;
-  grid-template-rows: 2fr 1fr;
+  grid-template-rows: 75% 25%;
   grid-template-areas:
-  "shop-display"
-  "shop-cta";
+  "shop__display"
+  "shop__cta";
 
-  .shop-display {
-    grid-area: shop-display;
+
+  .shop__display {
+    grid-area: shop__display;
   }
 
-  .shop-cta {
-    grid-area: shop-cta;
+  .shop__cta {
+    grid-area: shop__cta;
   }
 }
 

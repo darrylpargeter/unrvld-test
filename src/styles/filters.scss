@@ -1,0 +1,14 @@
+.filter {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .filter__input {
+    appearance: none;
+    font-size: $default-font-size;
+    background-color: $background-colour;
+    border: none;
+    border-bottom: 1px solid rgba(67, 67, 67, .6);
+  }
+}

@@ -31,8 +31,9 @@ function reducer(state, action) {
   }
 }
 
-export default function useBeerData() {
-  const [state, dispatch] = useReducer(reducer, initState);
+export default function useBeerData(customParams) {
+  const mergedState = { ...initState, ...customParams };
+  const [state, dispatch] = useReducer(reducer, mergedState);
   const endpoint = 'https://api.punkapi.com/v2/beers';
 
   const request = useEndpoint({ url: endpoint, params: state });
