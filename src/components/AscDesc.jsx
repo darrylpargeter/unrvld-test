@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { SortAscendingIcon, SortDesendingIcon } from '@components/icons';
 
 const AscDsc = ({ filterFn, children }) => {
@@ -18,5 +19,10 @@ const AscDsc = ({ filterFn, children }) => {
     </button>
   );
 };
+
+AscDsc.propTypes = {
+  filterFn: PropTypes.func,
+  children: PropTypes.elementType,
+}
 
 export default AscDsc

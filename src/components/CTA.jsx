@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Filters from '@components/Filters';
 
 const CTA = ({
@@ -21,6 +22,15 @@ const CTA = ({
       </div>
     </div>
   );
+}
+
+CTA.propTypes = {
+  data: PropTypes.object,
+  Component: PropTypes.elementType,
+  filterByName: PropTypes.func,
+  filterByIngredient: PropTypes.func,
+  filterByAbv: PropTypes.func,
+  handleSelect: PropTypes.func,
 }
 
 export default CTA;

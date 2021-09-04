@@ -5,8 +5,6 @@ import BeerDisplay from '@components/BeerDisplay';
 import useBeerData from '@hooks/useBeerData';
 import { sortArray } from '@utils/sortArray';
 
-// TODO add in click event to update shop display from cta
-
 const Shop = () => {
   const [data, setData] = React.useState([]);
   const [selectedBeer, setSelectedBeer] = React.useState();

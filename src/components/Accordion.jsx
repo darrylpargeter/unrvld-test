@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import BeerDisplay from '@components/BeerDisplay';
 import { ArrowIcon } from '@components/icons';
 import useAccordion from '@hooks/useAccordion';
@@ -25,6 +26,10 @@ const Accordion = ({ data }) => {
       ))}
     </div>
   );
+}
+
+Accordion.propTypes = {
+  data: PropTypes.object,
 }
 
 export default Accordion;

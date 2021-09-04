@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BeerDisplay = ({ beer }) => {
   const fallBackUrl = "https://images.punkapi.com/v2/keg.png";
@@ -30,5 +31,9 @@ const BeerDisplay = ({ beer }) => {
     </div>
   ) : null;
 };
+
+BeerDisplay.propTypes = {
+  beer: PropTypes.object,
+}
 
 export default BeerDisplay;

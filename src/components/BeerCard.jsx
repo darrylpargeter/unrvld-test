@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const BeerCard = ({ beer, handleSelect }) => {
   const fallBackUrl = "https://images.punkapi.com/v2/keg.png";
@@ -15,6 +16,11 @@ const BeerCard = ({ beer, handleSelect }) => {
       </div>
     </div>
   );
+}
+
+BeerCard.propTypes = {
+  beer: PropTypes.object,
+  handleSelect: PropTypes.func,
 }
 
 export default BeerCard;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import AscDesc from '@components/AscDesc';
 
 const Filters = ({ filterByName, filterByIngredient, filterByAbv }) => {
@@ -9,6 +10,12 @@ const Filters = ({ filterByName, filterByIngredient, filterByAbv }) => {
       <input className="filter__input" placeholder="filter by ingredient" onChange={filterByIngredient} />
     </div>
   );
+}
+
+Filters.propTypes = {
+  filterByName: PropTypes.func,
+  filterByIngredient: PropTypes.func,
+  filterByAbv: PropTypes.func,
 }
 
 export default Filters;
