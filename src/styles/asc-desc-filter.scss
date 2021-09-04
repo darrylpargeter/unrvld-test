@@ -4,4 +4,17 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    .asc-desc-filter__copy {
+      color: #fff;
+    }
+  }
+
+  .asc-desc-filter__copy {
+    transition: color .5s ease-in-out;
+  }
 }

@@ -27,6 +27,24 @@
     border-bottom: 1px solid $default-font-colour;
     cursor: pointer;
     font-size: 1.8rem;
+
+    &:hover {
+      .accordion__icon {
+        color: #fff;
+        background-color: $default-font-colour;
+        padding: .15rem;
+      }
+    }
+  }
+
+  .accordion__icon {
+    border-radius: 50%;
+    transition: color .2s;
+    transition: background-color .2s;
+  }
+
+  .accordion__icon--down {
+    transform: rotate(90deg);
   }
 
   .accordion__content {

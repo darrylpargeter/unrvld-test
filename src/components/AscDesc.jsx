@@ -12,8 +12,8 @@ const AscDsc = ({ filterFn, children }) => {
   const icon = sortType ? <SortAscendingIcon /> : <SortDesendingIcon />
 
   return (
-    <button className="asc-desc-filter" onClick={handleOnClick}>
-      <p>{children}</p>
+    <button className="asc-desc-filter button-effect" onClick={handleOnClick}>
+      <p className="asc-desc-filter__copy">{children}</p>
       {icon}
     </button>
   );

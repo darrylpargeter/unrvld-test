@@ -1,11 +1,11 @@
 .button-effect {
   position: relative;
   overflow: hidden;
-  transition: background-color .5s ease-in-out;
+  transition: background-color .8s;
   transition: color .5s ease-in-out;
 
   &:hover {
-    background-color: rgba(67, 67, 67, 0.6) !important;
+    background-color: rgba(67, 67, 67, 0.2) !important;
     color: #fff;
   }
 
