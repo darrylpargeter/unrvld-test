@@ -1,5 +1,18 @@
 .accordion {
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+
+  .accordion__button {
+    width: 10rem;
+    appearance: none;
+    border: none;
+    background-color: inherit;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
 
   .accordion__item {
     width: 100%;

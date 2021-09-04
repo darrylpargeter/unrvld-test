@@ -7,7 +7,7 @@ const Accordion = ({ data }) => {
 
   return (
     <div className="accordion">
-      <button className="accordion__button" onClick={accordion.toggleAll}>
+      <button className="accordion__button button-effect" onClick={accordion.toggleAll}>
         {accordion.areAllOpen ? 'Close all' : 'Open all' }
       </button>
       {accordion.items.map(item => (

@@ -1,2 +1,53 @@
 .all-beer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-areas: 
+  "all-beer__content all-beer__accordion";
+
+  padding: 0 9rem;
+  padding-bottom: 5rem;
+  padding-top: 16rem;
+
+  @include phone {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, auto) minmax(0, 1fr);
+    grid-template-areas:
+    "all-beer__content"
+    "all-beer__accordion";
+    grid-gap: 2rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    padding-top: 4rem;
+  }
+
+  .all-beer__title {
+    font-size: 7rem;
+
+    @include phone {
+      font-size: 4rem;
+    }
+  }
+
+  .all-beer__copy {
+    font-size: 1.8rem;
+  }
+
+  .all-beer__controls {
+    display: flex;
+    justify-content: flex-end;
+    align-content: flex-end;
+  }
+
+  .all-beer__button {
+    width: 10rem;
+    appearance: none;
+    border: none;
+    background-color: inherit;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .all-beer__button--right {
+    align-self: flex-end;
+  }
 }
