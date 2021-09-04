@@ -1,5 +1,5 @@
 # Intro
-A small test application using the (Punk API)[https://punkapi.com/]
+A small test application using the [Punk API](https://punkapi.com/)
 
 The App is split over Two Pages.
 
@@ -17,7 +17,7 @@ implerments a according with pagination on it
 
 ## Build
 To run the project all that is need is to do the following
-- pull the repo
-- `npm i`
-- `npm run start`
-- open a browser at `localhost:8000`
+1) `git clone git@github.com:darrylpargeter/unrvld-test.git`
+2) `npm i`
+3) `npm run start`
+4) open a browser at `localhost:8000`
