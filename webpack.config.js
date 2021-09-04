@@ -17,6 +17,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx'],
+    /*
+     *  Setting up a number of alias to advoid using relative paths within the files
+     */
     alias: {
       "@containers": resolve(__dirname, './src/containers'),
       "@components": resolve(__dirname, './src/components'),

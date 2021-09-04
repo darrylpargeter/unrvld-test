@@ -31,10 +31,19 @@ function reducer(state, action) {
   }
 }
 
+/*
+ * A React hook to handle the pagination and params of the requests
+ * to the api
+ *
+ * using the name of useBeerData to indercate the service name over a
+ * more generic name like usePaginationRequest as nothing eles is using 
+ * the pagination info
+ */
 export default function useBeerData(customParams) {
   const mergedState = { ...initState, ...customParams };
   const [state, dispatch] = useReducer(reducer, mergedState);
   const endpoint = 'https://api.punkapi.com/v2/beers';
+  const minPage = 1;
 
   const request = useEndpoint({ url: endpoint, params: state });
 
@@ -44,7 +53,7 @@ export default function useBeerData(customParams) {
   const prevPage = () => dispatch({ type: prevPageAction });
 
   const hasNextPage = request.data.length >= state.per_page;
-  const hasPrevPage = state.page > 1;
+  const hasPrevPage = state.page > minPage;
 
   return {
     ...request,

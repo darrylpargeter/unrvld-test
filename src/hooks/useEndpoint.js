@@ -1,5 +1,10 @@
 import { useState, useEffect } from 'react';
 
+/*
+ * A react hook to keep track of the requests, this hook uses
+ * a very simple cache to advoid uneedly making extra requests
+ * for pretty much static data.
+ */
 export default function useEndpoint(req) {
   if (!req?.url) throw new Error('useEndpoint needs a vaild url');
 

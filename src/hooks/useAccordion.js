@@ -1,5 +1,12 @@
 import React from 'react';
 
+/*
+ * a hook that follows a headless UI pattern, allowing the ability to decouple the UI from the logic
+ * more info on this pattern:
+ * https://www.merrickchristensen.com/articles/headless-user-interface-components/
+ * https://react-table.tanstack.com/docs/overview
+ */
+
 export default function useAccordion(data) {
   if (!Array.isArray(data)) throw new Error('Accordion: passed in data needs to be in an array format');
 
