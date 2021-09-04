@@ -1,4 +1,4 @@
-import { useReducer } from 'react';
+import { useReducer, useEffect } from 'react';
 import useEndpoint from '@hooks/useEndpoint';
 
 const initState = {
@@ -38,15 +38,19 @@ export default function useBeerData(customParams) {
 
   const request = useEndpoint({ url: endpoint, params: state });
 
+  useEffect(() => request.makeRequest(state), [state]);
+
   const nextPage = () => dispatch({ type: nextPageAction });
   const prevPage = () => dispatch({ type: prevPageAction });
 
   const hasNextPage = request.data.length >= state.per_page;
+  const hasPrevPage = state.page > 1;
 
   return {
     ...request,
     nextPage,
     prevPage,
     hasNextPage,
+    hasPrevPage,
   };
 }
