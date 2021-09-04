@@ -1,8 +1,14 @@
 import React from 'react';
+import Accordion from '@components/Accordion';
+import useBeerData from '@hooks/useBeerData';
 
 const AllBeers = () => {
+  const res = useBeerData();
+
   return (
-    <h1>All Beers</h1>
+    <div className="all-beer">
+      <Accordion data={res.data} />
+    </div>
   );
 };
 

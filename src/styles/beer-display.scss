@@ -10,6 +10,7 @@
   "beer-display__image beer-display__item--first beer-display__item--ibu beer-display__item--abv beer-display__item--vol" ;
   border: 1px solid $default-font-colour;
   border-right: none;
+  border-left: none;
 
 
   @include phone {
