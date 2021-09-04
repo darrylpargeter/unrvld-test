@@ -1,3 +1,5 @@
+![Screen Shot](imgs/screen-shot.png)
+
 # Intro
 A small test application using the [Punk API](https://punkapi.com/)
 
