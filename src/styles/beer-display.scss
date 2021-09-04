@@ -1,0 +1,106 @@
+.beer-display {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  grid-template-rows: 2fr .5fr;
+  grid-template-areas:
+  "beer-display__image beer-display__copy beer-display__copy beer-display__copy beer-display__copy"
+  "beer-display__image beer-display__item--first beer-display__item--ibu beer-display__item--abv beer-display__item--vol" ;
+  border: 1px solid $default-font-colour;
+  border-right: none;
+
+
+  @include phone {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: .5fr .2fr;
+    grid-template-areas:
+    "beer-display__image  beer-display__copy beer-display__copy beer-display__copy"
+    "beer-display__item--first beer-display__item--ibu beer-display__item--abv beer-display__item--vol" ;
+  }
+
+  .beer-display__image {
+    grid-area: beer-display__image;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    border-right: 1px solid $default-font-colour;
+    padding: 4rem;
+
+    @include phone {
+      padding: 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  .beer-display__copy {
+    grid-area: beer-display__copy;
+    padding: 4rem;
+  }
+
+  .beer-display__title {
+    font-size: 7rem;
+
+    @include tablet {
+      font-size: 5rem;
+    }
+
+    @include phone {
+      font-size: 4rem;
+    }
+  }
+
+  .beer-display__description {
+    font-size: 3rem;
+    font-weight: 300;
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include phone {
+      font-size: 1.6rem;
+    }
+  }
+
+  .beer-display__item {
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid $default-font-colour;
+    border-top: 1px solid $default-font-colour;
+    font-size: 3.5rem;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    @include tablet {
+      font-size: 2rem;
+    }
+
+    @include phone {
+      font-size: 1.6rem;
+    }
+  }
+
+  .beer-display__item--first {
+    grid-area: beer-display__item--first;
+  }
+  .beer-display__item--ibu {
+    grid-area: beer-display__item--ibu;
+  }
+  .beer-display__item--abv {
+    grid-area: beer-display__item--abv;
+  }
+  .beer-display__item--vol {
+    grid-area: beer-display__item--vol;
+  }
+}

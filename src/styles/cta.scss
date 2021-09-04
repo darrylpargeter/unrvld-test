@@ -2,12 +2,17 @@
   height: 100%;
   margin: 2rem;
   display: grid;
-  grid-template-rows: .5fr 1fr; 
+  grid-template-rows: minmax(0, auto) 1fr; 
+
+  @include phone {
+    margin: 1rem;
+  }
 
   .cta__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-template-rows: auto;
     grid-gap: 1rem;
+    min-width: 0;
   }
 }

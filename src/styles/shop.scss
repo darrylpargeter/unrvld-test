@@ -1,19 +1,24 @@
 .shop {
   height: 100%;
-  // overflow: hidden;
   display: grid;
   grid-template-rows: 75% 25%;
   grid-template-areas:
   "shop__display"
   "shop__cta";
 
+  @include phone {
+    grid-template-rows: minmax(0, auto) 1fr;
+  }
+
 
   .shop__display {
     grid-area: shop__display;
+    min-width: 0;
   }
 
   .shop__cta {
     grid-area: shop__cta;
+    min-width: 0;
   }
 }
 

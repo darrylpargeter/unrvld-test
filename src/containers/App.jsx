@@ -1,11 +1,11 @@
 import React from 'react';
 import RouterContainer from '@containers/Router';
-import Nav from '@components/Nav';
+import Header from '@components/Header';
 
 const App = () => {
   return (
     <>
-      <Nav />
+      <Header />
       <RouterContainer />
     </>
   );

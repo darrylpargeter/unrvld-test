@@ -1,21 +1,22 @@
 import React from 'react';
 import CTA from '@components/CTA'; 
 import BeerCard from '@components/BeerCard';
+import BeerDisplay from '@components/BeerDisplay';
 import useBeerData from '@hooks/useBeerData';
 import { sortArray } from '@utils/sortArray';
 
-// TODO create CTA comp 
-// TODO create AscDsc comp
-// TODO create methods to sort beer data
 // TODO add in click event to update shop display from cta
-// TODO create a AddToCart button
-// TODO create display comp
 
 const Shop = () => {
   const [data, setData] = React.useState([]);
+  const [selectedBeer, setSelectedBeer] = React.useState();
   const res = useBeerData({ per_page: 8 });
 
-  React.useEffect(() => setData(res.data), [res.data]);
+  // TODO add in click event to update selectedBeer
+  React.useEffect(() => {
+    setSelectedBeer(res.data[0]);
+    setData(res.data)
+  }, [res.data]);
 
   const _makeRequest = (key, value) => {
     const formatedValue = value.replace(' ', '_');
@@ -38,10 +39,14 @@ const Shop = () => {
     setData([...sortArray(data, 'abv', sortType)]);
   }
 
+  const handleBeerSelect = (beer) => {
+    setSelectedBeer(beer);
+  }
+
   return (
     <div className="shop">
       <div className="shop__display">
-        <h1>Shop display</h1>
+        <BeerDisplay beer={selectedBeer} />
       </div>
       <div className="shop__cta">
         <CTA 
@@ -50,6 +55,7 @@ const Shop = () => {
           filterByName={filterByName}
           filterByIngredient={filterByIngredient}
           filterByAbv={filterByAbv}
+          handleSelect={handleBeerSelect}
         />
       </div>
     </div>

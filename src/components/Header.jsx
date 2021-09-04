@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link } from '@reach/router';
+import { UserIcon, CartIcon } from '@components/icons';
 
-const Nav = () => {
+const Header = () => {
   return (
-    <nav>
-      <Link to="/">Shop</Link>{" "}
-      <Link to="/all-beers">All Beers</Link>{" "}
-      <h2> Temp Header</h2>
-    </nav>
+    <header className="header">
+      <nav className="header__nav">
+        <Link className="header__navLink" to="/">Shop</Link>{" "}
+        <Link className="header__navLink" to="/all-beers">All Beers</Link>{" "}
+      </nav>
+      <div className="header__logo">
+        <h1>Brew Dog</h1>
+      </div>
+      <div className="header__shopping">
+        <UserIcon />
+        <CartIcon />
+      </div>
+    </header>
   );
 };
 
-export default Nav;
+export default Header;

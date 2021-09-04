@@ -5,10 +5,12 @@ import AllBeers from '@containers/AllBeers';
 
 const RouterContainer = () => {
   return (
-    <Router>
-      <Shop path="/" />
-      <AllBeers path="all-beers" />
-    </Router>
+    <div className="layout__router">
+      <Router>
+        <Shop path="/" />
+        <AllBeers path="all-beers" />
+      </Router>
+    </div>
   );
 }
 
